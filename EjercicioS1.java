@@ -2,22 +2,20 @@
 import java.util.Scanner;
 
 public class EjercicioS1 {
-
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
 
         // Ask the user to enter a number
         System.out.print("Number: ");
-        int num = sc.nextInt();
+        int number = sc.nextInt();
 
-        // Calculate the remainder of division by 2
-        int remain = num % 2;
+        // Convert the number to binary
+        String binary = Integer.toBinaryString(number);
+
+        // Get the last digit of the binary number
+        int lastDigit = binary.charAt(binary.length() - 1) - '0';
 
         // Show the result
-        if (remain == 0) {
-            System.out.println("even");
-        } else {
-            System.out.println("odd");
-        }
+        System.out.println(lastDigit == 0 ? "even" : "odd");
     }
 }
